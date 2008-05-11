@@ -6,7 +6,7 @@ package REST::Google::Translate;
 use strict;
 use warnings;
 
-use version; our $VERSION = qv('1.0.2');
+use version; our $VERSION = qv('1.0.3');
 
 require Exporter;
 require REST::Google;
@@ -19,7 +19,7 @@ sub responseData {
 	return bless $self->{responseData}, 'REST::Google::Translate::Data';
 }
 
-package # hide from CPAN 
+package # hide from CPAN
 	REST::Google::Translate::Data;
 
 require Class::Accessor;

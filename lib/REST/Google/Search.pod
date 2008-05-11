@@ -60,11 +60,14 @@ of service URLs:
 	use REST::Google::Search qw/VIDEO/;
 	REST::Google::Search->service( VIDEO );
 
-Default service is WEB.
+Default service is C<WEB>.
 
 =item __PACKAGE__->http_referer()
 
 Get/set HTTP C<Referer> header.
+
+I<Note:> Google says that you should supply a valid HTTP referer header each time you
+perform a request to their AJAX API, so C<new()> raises warning unless referer is specified.
 
 =item __PACKAGE__->new()
 
@@ -127,14 +130,14 @@ Available classes:
 
 =head1 SEE ALSO
 
-L<REST::Google> - the base class for this module
-
-L<http://code.google.com/p/rest-google/> - this project on Google code;
+L<REST::Google> - the base class for this module;
 
 L<http://code.google.com/apis/ajaxsearch/documentation/#fonje> - brief information about
 Google Search AJAX API in non-Javascript environments;
 
-L<http://code.google.com/apis/ajaxsearch/documentation/reference.html#_intro_fonje> - Google Search AJAX API.
+L<http://code.google.com/apis/ajaxsearch/documentation/reference.html#_intro_fonje> - Google Search AJAX API documentation;
+
+L<Google::Search> - high-level class for Google Search AJAX API;
 
 =head1 LICENSE AND COPYRIGHT
 

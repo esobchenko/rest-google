@@ -35,13 +35,12 @@ Get/set HTTP C<Referer> header.
 I<Note:> Google says that you should supply a valid HTTP referer header each time you
 perform a request to their AJAX API, so C<new()> raises warning unless referer is specified.
 
-See L<REST::Google->http_referer>.
-
 =item __PACKAGE__->new()
 
-C<q> argument should contain phrase for translation.
-C<langpair> - should be used to specify translation languages.
-According to Google API they should be separated by "|" (pipe) sign. 
+C<q> argument should contain a phrase for translation.
+C<langpair> is used to specify translation languages.
+
+According to Google API documentation the langpair languages should be separated by "|" (pipe) sign.
 For complete list of language pairs and other arguments please refer to 'Google Translate AJAX API'
 documentation. E.g.:
 
@@ -52,7 +51,7 @@ documentation. E.g.:
 
 The code above will perform a following HTTP GET request:
 
-	http://ajax.googleapis.com/ajax/services/language/translate?v=1.0&q=hello%20world&langpair=en%7Cru
+	http://ajax.googleapis.com/ajax/services/language/translate?v=1.0&q=hello%20world&langpair=en%7Cit
 
 I<Note:> You can left protocol version number unspecified while making your searches since
 C<v=1.0> is passed by default.
@@ -67,11 +66,9 @@ To access translated text you should use C<responseData> method as follows
 
 =head1 SEE ALSO
 
-L<REST::Google> - the base class for this module
+L<REST::Google> - the base class for this module;
 
-L<http://code.google.com/p/rest-google/> - this project on Google code;
-
-L<http://code.google.com/apis/ajaxlanguage/documentation/#fonje> - Google Translate AJAX API
+L<http://code.google.com/apis/ajaxlanguage/documentation/#fonje> - Google Translate AJAX API documentation;
 
 =head1 LICENSE AND COPYRIGHT
 

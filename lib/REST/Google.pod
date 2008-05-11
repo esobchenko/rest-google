@@ -25,11 +25,11 @@ REST::Google - access Google REST (aka AJAX) API from Perl
 
 =head1 DESCRIPTION
 
-C<REST::Google> provides OO interface to Google REST (aka AJAX) API. 
+C<REST::Google> provides OO interface to Google REST (aka AJAX) API.
 
 Note that this module provides low-level access to Google services API. Consider using
 L<REST::Google::Search>, L<REST::Google::Translate> or L<REST::Google::Feeds>, which
-provide convenient access to service request results. 
+provide convenient access to service request results.
 
 =head1 METHODS
 
@@ -40,7 +40,7 @@ provide convenient access to service request results.
 Get/set service to use. You must set this to valid URL. E.g.:
 
 	REST::Google->service('http://ajax.googleapis.com/ajax/services/search/web');
-	
+
 Normally, you don't need this, since L<REST::Google::Search>, L<REST::Google::Translate> or L<REST::Google::Feeds>
 modules do this for you.
 
@@ -107,16 +107,16 @@ C<REST::Google> uses L<JSON::Any> for decoding Google AJAX Search API response a
 L<REST::Google::Search>, L<REST::Google::Translate>, L<REST::Google::Feeds> child classes for
 Search, Translate and Feeds services correspondingly.
 
-L<http://code.google.com/p/rest-google/> - this project on Google code;
+L<http://github.com/esobchenko/rest-google/> - this project on github;
 
 L<http://code.google.com/apis/ajaxsearch/documentation/#fonje> - brief information about
 Google Search AJAX API in non-Javascript environments;
 
-L<http://code.google.com/apis/ajaxsearch/documentation/reference.html#_intro_fonje> - Google Search AJAX API.
+L<http://code.google.com/apis/ajaxsearch/documentation/reference.html#_intro_fonje> - Google Search AJAX API documentation;
 
-L<http://code.google.com/apis/ajaxlanguage/documentation/#fonje> - Google Translate AJAX API
+L<http://code.google.com/apis/ajaxlanguage/documentation/#fonje> - Google Translate AJAX API documentation;
 
-L<http://code.google.com/apis/ajaxfeeds/documentation/#fonje> - Google Feeds AJAX API
+L<http://code.google.com/apis/ajaxfeeds/documentation/#fonje> - Google Feeds AJAX API documentation;
 
 =head1 LICENSE AND COPYRIGHT
 

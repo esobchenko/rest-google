@@ -6,7 +6,7 @@ package REST::Google::Search;
 use strict;
 use warnings;
 
-use version; our $VERSION = qv('1.0.2');
+use version; our $VERSION = qv('1.0.3');
 
 use constant {
 	WEB => 'http://ajax.googleapis.com/ajax/services/search/web',

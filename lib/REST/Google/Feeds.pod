@@ -40,8 +40,6 @@ Get/set HTTP C<Referer> header.
 I<Note:> Google says that you should supply a valid HTTP referer header each time you
 perform a request to their AJAX API, so C<new()> raises warning unless referer is specified.
 
-See L<REST::Google->http_referer>.
-
 =item __PACKAGE__->new()
 
 C<q> argument should contain URL to a valid RSS or Atom feed. 
@@ -60,14 +58,14 @@ C<v=1.0> is passed by default.
 
 See L<REST::Google> C<new> method.
 
-=item responseData 
+=item responseData
 
-Method returns C<REST::Google::Feeds::Data> object, which has only method C<feed>. 
+Method returns C<REST::Google::Feeds::Data> object, which has a single method C<feed>.
 
 	my $res = REST::Google::Feeds->new(
 		q => 'http://digg.com/rss/index.xml',
 	);
-	
+
 	my $feed = $res->responseData->feed;
 
 =item feed
@@ -77,22 +75,24 @@ Method returns C<REST::Google::Feeds::Feed> object, which has accessors for all 
 	my $feed = $res->responseData->feed;
 	print $feed->title;
 	print $feed->link;
-	
-Attributes of feed are:
+
+Attributes of C<$feed> are:
+
 	title
 	link
 	author
 	description
 	type
 	entries
-	
+
 Obtaining feed entries:
 
 	foreach my $entry ($feed->entries) {
 		print $entry->title;
 	}
 
-Attributes of $entry are:
+Attributes of C<$entry> are:
+
 	title
 	link
 	author
@@ -106,8 +106,6 @@ Attributes of $entry are:
 =head1 SEE ALSO
 
 L<REST::Google> - the base class for this module
-
-L<http://code.google.com/p/rest-google/> - this project on Google code;
 
 L<http://code.google.com/apis/ajaxfeeds/documentation/#fonje> - Google Feeds AJAX API
 
