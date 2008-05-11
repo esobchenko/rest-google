@@ -2,6 +2,7 @@ Revision history of REST::Google
 
 1.0.3  Sun May 11 12:49:28 EEST 2008
     - POD improved;
+    - MANIFEST.SKIP added to git repo;
 
 1.0.2   Wed Apr 30 12:44:42 UTC 2008
     - added support for Search, Feeds and Translate services;
