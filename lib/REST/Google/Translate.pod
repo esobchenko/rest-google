@@ -1,6 +1,6 @@
 =head1 NAME
 
-REST::Google::Translate - OO interface to Google Translate API
+REST::Google::Translate - OO interface to Google Translate (aka Languages) API
 
 =head1 SYNOPSIS
 

@@ -1,5 +1,8 @@
 Revision history of REST::Google
 
+1.0.4  Tue Jul  1 15:01:47 UTC 2008
+    - #37213 fixed. Thanks to Xuerui Wang;
+
 1.0.3  Sun May 11 12:49:28 EEST 2008
     - POD improved;
     - MANIFEST.SKIP added to git repo;

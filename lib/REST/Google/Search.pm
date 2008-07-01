@@ -6,7 +6,7 @@ package REST::Google::Search;
 use strict;
 use warnings;
 
-use version; our $VERSION = qv('1.0.3');
+use version; our $VERSION = qv('1.0.4');
 
 use constant {
 	WEB => 'http://ajax.googleapis.com/ajax/services/search/web',
@@ -28,6 +28,7 @@ __PACKAGE__->service( WEB );
 
 sub responseData {
 	my $self = shift;
+	return undef unless defined $self->{responseData};
 	return bless $self->{responseData}, 'REST::Google::Search::Data';
 }
 
@@ -51,19 +52,24 @@ use base qw/Class::Accessor/;
 
 {
 	my @fields = qw(
-		estimatedResultCount
-		currentPageIndex
 		moreResultsUrl
+		currentPageIndex
 	);
 
 	__PACKAGE__->mk_ro_accessors( @fields );
+}
+
+sub estimatedResultCount {
+	my $self = shift;
+	my $count = $self->{estimatedResultCount};
+	defined $count ? $count : 0;
 }
 
 # XXX original 'pages' entry contains array of hashes.
 sub pages {
 	my $self = shift;
 	my $pages = $self->{pages};
-	return scalar @{ $pages };
+	defined $pages ? scalar @{ $pages } : 0;
 }
 
 #
