@@ -21,5 +21,5 @@ ok(defined $data, "data");
 my $cursor = $data->cursor;
 ok(defined $cursor, "cursor");
 my $pages = $cursor->pages;
-ok(!defined $pages);
+is($pages, 0, "pages");
 
