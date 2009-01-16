@@ -1,5 +1,9 @@
 Revision history of REST::Google
 
+1.0.5  Fri Jan 16 13:53:56 EET 2009
+    - fixed #42011: Why does responseData->cursor->pages force scalar? (Dave Wolfe)
+    - fixed #42031: Why does responseData->results return a list? (Dave Wolfe)
+
 1.0.4  Tue Jul  1 15:01:47 UTC 2008
     - #37213 fixed. Thanks to Xuerui Wang;
 

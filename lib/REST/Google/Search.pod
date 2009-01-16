@@ -17,8 +17,8 @@ REST::Google::Search - OO interface to Google Search API
 	my $data = $res->responseData;
 
 	my $cursor = $data->cursor;
+	my $pages = $data->pages;
 
-	printf "pages: %s\n", $cursor->pages;
 	printf "current page index: %s\n", $cursor->currentPageIndex;
 	printf "estimated result count: %s\n", $cursor->estimatedResultCount;
 

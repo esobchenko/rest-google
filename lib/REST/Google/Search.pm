@@ -6,7 +6,7 @@ package REST::Google::Search;
 use strict;
 use warnings;
 
-use version; our $VERSION = qv('1.0.4');
+use version; our $VERSION = qv('1.0.5');
 
 use constant {
 	WEB => 'http://ajax.googleapis.com/ajax/services/search/web',
@@ -37,7 +37,10 @@ package # hide from CPAN
 
 sub results {
 	my $self = shift;
-	return map { bless $_, $_->{GsearchResultClass} } @{ $self->{results} };
+	if ( wantarray ) {
+		return map { bless $_, $_->{GsearchResultClass} } @{ $self->{results} };
+	}
+	[ map { bless $_, $_->{GsearchResultClass} } @{ $self->{results} } ];
 }
 
 sub cursor {
@@ -65,11 +68,27 @@ sub estimatedResultCount {
 	defined $count ? $count : 0;
 }
 
-# XXX original 'pages' entry contains array of hashes.
 sub pages {
 	my $self = shift;
-	my $pages = $self->{pages};
-	defined $pages ? scalar @{ $pages } : 0;
+	my $pages = $self->{pages} || [];
+	if (wantarray) {
+		return map { bless $_, 'REST::Google::Search::Pages' } @{ $pages };
+	}
+	[ map { bless $_, 'REST::Google::Search::Pages' } @{ $pages } ];
+}
+
+package # hide from CPAN
+	REST::Google::Search::Pages;
+
+use base qw/Class::Accessor/;
+
+{
+	my @fields = qw(
+		start
+		label
+	);
+
+	__PACKAGE__->mk_ro_accessors( @fields );
 }
 
 #

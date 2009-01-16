@@ -6,7 +6,7 @@ package REST::Google::Feeds;
 use strict;
 use warnings;
 
-use version; our $VERSION = qv('1.0.3');
+use version; our $VERSION = qv('1.0.5');
 
 require Exporter;
 require REST::Google;
@@ -47,7 +47,10 @@ use base qw/Class::Accessor/;
 
 sub entries {
 	my $self = shift;
-	map { bless $_, 'REST::Google::Feeds::Entry' } @{ $self->{entries} };
+	if (wantarray) {
+		return map { bless $_, 'REST::Google::Feeds::Entry' } @{ $self->{entries} };
+	}
+	[ map { bless $_, 'REST::Google::Feeds::Entry' } @{ $self->{entries} } ];
 }
 
 package # hide from CPAN
