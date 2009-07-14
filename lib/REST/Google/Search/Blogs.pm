@@ -6,7 +6,7 @@ package REST::Google::Search::Blogs;
 use strict;
 use warnings;
 
-use version; our $VERSION = qv('1.0.5');
+use version; our $VERSION = qv('1.0.6');
 
 require REST::Google::Search;
 use base qw/REST::Google::Search/;

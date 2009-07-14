@@ -1,5 +1,8 @@
 Revision history of REST::Google
 
+1.0.6  Tue Jul 14 14:52:28 EEST 2009
+    - fixed bug in SYNOPSIS section of Search.pod
+
 1.0.5  Fri Jan 16 13:53:56 EET 2009
     - fixed #42011: Why does responseData->cursor->pages force scalar? (Dave Wolfe)
     - fixed #42031: Why does responseData->results return a list? (Dave Wolfe)
