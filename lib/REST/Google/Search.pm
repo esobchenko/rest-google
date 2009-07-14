@@ -16,13 +16,14 @@ use constant {
 	IMAGES => 'http://ajax.googleapis.com/ajax/services/search/images',
 	BOOKS => 'http://ajax.googleapis.com/ajax/services/search/books',
 	BLOGS => 'http://ajax.googleapis.com/ajax/services/search/blogs',
+	PATENT => 'http://ajax.googleapis.com/ajax/services/search/patent',
 };
 
 require Exporter;
 require REST::Google;
 use base qw/Exporter REST::Google/;
 
-our @EXPORT_OK = qw/WEB VIDEO NEWS LOCAL IMAGES BOOKS BLOGS/;
+our @EXPORT_OK = qw/WEB VIDEO NEWS LOCAL IMAGES BOOKS BLOGS PATENT/;
 
 __PACKAGE__->service( WEB );
 
@@ -102,14 +103,13 @@ use base qw/Class::Accessor/;
 
 {
 	my @fields = qw(
-		GsearchResultClass
 		unescapedUrl
 		url
 		visibleUrl
-		cacheUrl
 		title
 		titleNoFormatting
 		content
+		cacheUrl
 	);
 
 	__PACKAGE__->mk_ro_accessors( @fields );
@@ -133,6 +133,9 @@ use base qw/Class::Accessor/;
 		tbHeight
 		tbUrl
 		playUrl
+		author
+		viewCount
+		rating
 	);
 
 	__PACKAGE__->mk_ro_accessors( @fields );
@@ -155,6 +158,8 @@ use base qw/Class::Accessor/;
 		location
 		publishedDate
 		relatedStories
+		image
+		language
 	);
 
 	__PACKAGE__->mk_ro_accessors( @fields );
@@ -177,10 +182,13 @@ use base qw/Class::Accessor/;
 		region
 		country
 		phoneNumbers
+		addressLines
 		ddUrl
 		ddUrlToHere
 		ddUrlFromHere
 		staticMapUrl
+		listingType
+		content
 	);
 
 	__PACKAGE__->mk_ro_accessors( @fields );
@@ -246,6 +254,28 @@ use base qw/Class::Accessor/;
 		author
 		blogUrl
 		publishedDate
+	);
+
+	__PACKAGE__->mk_ro_accessors( @fields );
+}
+
+package # hide from CPAN
+	GpatentSearch;
+
+use base qw/Class::Accessor/;
+
+{
+	my @fields = qw(
+		title
+		titleNoFormatting
+		content
+		unescapedUrl
+		url
+		applicationDate
+		patentNumber
+		patentStatus
+		assignee
+		tbUrl
 	);
 
 	__PACKAGE__->mk_ro_accessors( @fields );
