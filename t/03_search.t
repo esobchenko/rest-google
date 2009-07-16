@@ -14,19 +14,23 @@ use Data::Dumper;
 # empty search
 # defect #37213 by Xuerui Wang
 my $search = REST::Google::Search->new( q => '' );
-
 is($search->responseStatus, 200, "empty search status");
+
 my $data = $search->responseData;
 ok(defined $data, "empty search data");
+
 my $cursor = $data->cursor;
 ok(defined $cursor, "empty search cursor");
+
 my $pages = $cursor->pages;
 is(scalar(@{$pages}), 0, "empty search pages");
 
 $search = REST::Google::Search->new( q => 'perl' );
 is($search->responseStatus, 200, "status");
+
 $data = $search->responseData;
 ok(defined $data, "data");
+
 $cursor = $data->cursor;
 ok(defined $cursor, "cursor");
 
@@ -41,5 +45,4 @@ my @results = $data->results;
 for (0..3) {
 	is($results[$_]->{url}, $data->results->[$_]->{url});
 }
-
 
