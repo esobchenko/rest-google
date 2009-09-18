@@ -1,5 +1,8 @@
 Revision history of REST::Google
 
+1.0.8  Fri Sep 18 09:38:00 UTC 2009
+    - fixed test t/05_translate.t
+
 1.0.7  Fri Jul 17 11:52:30 EEST 2009
     - tests added for Feeds and Translate API;
     - minor POD fixes applied

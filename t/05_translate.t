@@ -11,9 +11,9 @@ REST::Google::Translate->http_referer('http://www.cpan.org');
 
 use Data::Dumper;
 
-# from the official google blog
-my $en_text_ok = 'hello world';
-my $it_text_ok = 'ciao mondo';
+# The official google blog
+my $en_text_ok = 'hello';
+my $it_text_ok = 'ciao';
 
 my $res = REST::Google::Translate->new(
 	q => $en_text_ok,
