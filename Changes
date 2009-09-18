@@ -1,5 +1,8 @@
 Revision history of REST::Google
 
+1.0.7  Fri Sep 18 09:38:00 UTC 2009
+    - fixed test t/05_translate.t
+
 1.0.6  Tue Jul 14 14:52:28 EEST 2009
     - fixed bug in SYNOPSIS section of Search.pod
     - added Patent search support
