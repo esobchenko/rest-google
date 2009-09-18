@@ -1,5 +1,9 @@
 Revision history of REST::Google
 
+1.0.7  Fri Jul 17 11:52:30 EEST 2009
+    - tests added for Feeds and Translate API;
+    - minor POD fixes applied
+
 1.0.6  Tue Jul 14 14:52:28 EEST 2009
     - fixed bug in SYNOPSIS section of Search.pod
     - added Patent search support
@@ -16,8 +20,8 @@ Revision history of REST::Google
     - POD improved;
     - MANIFEST.SKIP added to git repo;
 
-1.0.2   Wed Apr 30 12:44:42 UTC 2008
+1.0.2  Wed Apr 30 12:44:42 UTC 2008
     - added support for Search, Feeds and Translate services;
 
-1.0.1   Tue Apr 29 18:09:42 UTC 2008
+1.0.1  Tue Apr 29 18:09:42 UTC 2008
     - initial release.

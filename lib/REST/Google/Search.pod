@@ -53,6 +53,7 @@ The following table lists the URL used to access Google search services:
 	IMAGES    http://ajax.googleapis.com/ajax/services/search/images
 	BOOKS     http://ajax.googleapis.com/ajax/services/search/books
 	BLOGS     http://ajax.googleapis.com/ajax/services/search/blogs
+	PATENT     http://ajax.googleapis.com/ajax/services/search/patent
 
 Service constants are exported on demand, so you can use the constants instead
 of service URLs:
@@ -125,6 +126,8 @@ Available classes:
 =item L<REST::Google::Search::Video>
 
 =item L<REST::Google::Search::News>
+
+=item L<REST::Google::Search::Patent>
 
 =back
 
