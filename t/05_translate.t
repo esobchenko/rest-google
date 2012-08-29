@@ -3,7 +3,8 @@
 
 use strict;
 
-use Test::More tests => 4;
+use Test::More skip_all => "Free Google Translate service was withdrawn";
+# skipping these 4 tests due to withdrawal of free Google Translate service - see https://github.com/esobchenko/rest-google/issues/1
 
 use REST::Google::Translate;
 
